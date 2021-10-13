@@ -66,7 +66,7 @@ if [ $db != "information_schema" ] && [ $db != "performance_schema" ] ; then
 done
 echo -e "----------------------------------\n   `date`   \n----------------------------------" > /tmp/backupdata.txt
 echo "" >> /tmp/backupdata.txt
-echo "Successfully completed backup of all databases of MPM Dev server." >> /tmp/backupdata.txt
+echo "Successfully completed backup of all databases of server" >> /tmp/backupdata.txt
 echo "" >> /tmp/backupdata.txt
 echo "Generated backup files are as below:" >> /tmp/backupdata.txt
 #cd /Backup/mysqlbackup
@@ -89,7 +89,7 @@ echo "" >> /tmp/backupdata.txt
 echo "`uptime`" >> /tmp/backupdata.txt
 echo "" >> /tmp/backupdata.txt
 
-mail -s "Successfully completed backup of all databases of MPM Dev server for `date`" emailid@example.com  < /tmp/backupdata.txt
+mail -s "Successfully completed backup of all databases `date`" emailid@example.com  < /tmp/backupdata.txt
 mkdir /Backup/mysql_backup/`date +%Y%m%d`
 sleep 1
 mv /Backup/mysql_backup/*.sql.gz /Backup/mysql_backup/`date +%Y%m%d`
